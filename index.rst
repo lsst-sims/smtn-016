@@ -46,12 +46,177 @@
 
 .. note::
 
-   **This technote is not yet published.**
-
    A quick derivation of expected limiting surface brightness magnitudes in different limiting situations.
 
 .. Add content here.
 .. Do not include the document title (it's automatically added from metadata.yaml).
+
+Limiting Surface Brightness
+---------------------------
+
+Throughout we are assuming Guassian propigation of error. The number of photons detected in a single pixel from an object of constant surface brightness :math:`\mu`:
+
+.. math::
+   N_{photons, source} = 10^{\frac{\mu_{source} - Z_p + kX}{-2.5}} * A_{pix} * t_{exp}
+
+where :math:`Z_p` is the telescope instrumental zeropoint, :math:`k` is the atmospheric extinction term, :math:`X` is airmass, :math:`A_{pix}` is the area of a pixel (e.g., pixscale squared), and :math:`t_{exp}` is the exposure time.
+
+The number of photons from the sky background will then be (note we drop the airmass extinction):
+
+.. math::
+   N_{photons, sky} = 10^{\frac{\mu_{sky} - Z_p}{-2.5}} * A_{pix} * t_{exp}
+
+
+So the total SNR for a single pixel should be:
+
+.. math::
+   \frac{S}{N} = \frac{N_{photons, source}}{\sqrt{N_{photons, source} + N_{photons, sky} + RN^2}}
+
+where RN is the readnoise in electrons.
+
+
+Source limited
+===============
+
+In the source-limit, for a single pixel
+
+.. math::
+   SNR/pix = \sqrt{N_{photons,source}}
+
+and then the final total SNR after combining independent pixels will be
+
+.. math::
+   SNR = \sqrt{N_{pix}}\sqrt{N_{photons,source}}
+
+If I work this out on paper I end up with
+
+.. math::
+   \mu_{source} = -1.25\log_{10}{SNR} + \frac{1.25}{2}\log_{10}{N_{pix}A_{pix}t_{exp}} + Z_p - kX
+
+
+
+Background Limited
+==================
+
+.. math::
+   SNR/pix = \frac{N_{photons,source}}{\sqrt{N_{photons, sky}}}
+
+then the total SNR:
+
+.. math::
+   SNR = \sqrt{N_{pix}} \frac{N_{photons,source}}{\sqrt{N_{photons, sky}}}
+
+
+.. math::
+   N_{photons,source}^2 = \frac{SNR^2 N_{photons, sky}}{N_{pix}}
+
+
+.. math::
+   A_{pix}^2 t_{exp}^2 10^{\frac{\mu_{source} - Z_p + kX}{-1.25}} = \frac{SNR^2A_{pix}t_{exp}10^{\frac{\mu_{sky} - Z_p}{-2.5}}}{N_{pix}}
+
+
+.. math::
+   10^{\frac{\mu_{source} - Z_p + kX}{-1.25}} = \frac{SNR^2 10^{\frac{\mu_{sky} - Z_p}{-2.5}}}{ A_{pix} t_{exp} N_{pix}}
+
+
+.. math::
+   \mu_{source} - Z_p + kX =-1.25 \log_{10}{\frac{SNR^2}{ A_{pix} t_{exp} N_{pix}}} + 0.5(\mu_{sky} -Z_p)
+
+
+.. math::
+   \mu_{source} =-1.25 \log_{10}{\frac{SNR^2}{A_{pix} t_{exp} N_{pix}}} + 0.5\mu_{sky} +0.5Z_p - kX
+
+
+Readnoise Limited
+==================
+
+.. math::
+   SNR/pix = \frac{N_{photons,source}}{RN}
+
+
+.. math::
+   \frac{SNR RN}{\sqrt{N_{pix}}}  = 10^{\frac{\mu_{source} - Z_p + kX}{-2.5}} * A_{pix} * t_{exp}
+
+
+.. math::
+   \mu_{source} = -2.5\log_{10} \frac{SNR RN}{A_{pix} t_{exp} \sqrt{N_{pix}}} + Z_p -kX
+
+If one is dealing with multiple snaps in an exposure, the RN should be the effective readnoise, i.e., the single frame readnoise multiplied by the square root of the number of snaps.
+
+Combining limiting magnitudes
+=============================
+
+A quick justification for how to combine limiting magnitudes, because someone didn't believe me.
+
+We define :math:`m_N` as the magnitude where the SNR = N (Usually 5, but whatever)
+
+so:
+
+.. math::
+   \frac{flux_N}{Noise} = N
+
+Let's look at a flux ratio with some arbitrary mag :math:`m`
+
+.. math::
+   m-m_N = -2.5 \log_{10}{\frac{flux}{flux_N}} 
+
+
+SNR at that new magnitude is
+
+.. math::
+   \frac{flux}{Noise} = SNR
+
+
+substitute in
+
+.. math::
+   m-m_N = -2.5 \log_{10}{\frac{SNR * Noise}{N*Noise}} 
+
+
+Solve for the SNR of an arbitrary mag :math:`m` given :math:`m_N`:
+
+.. math::
+   SNR = N 10^{-0.4(m-m_N)}
+
+
+Now, if we have a bunch of limiting magnitudes :math:`m_{5,i}`, what is the final SNR if we coadd them? The SNR for some fiducial mag :math:`m` in each frame will be
+
+.. math::
+   SNR_i = N 10^{-0.4(m-m_{N,i})}
+
+
+SNR adds in quadrature
+
+.. math::
+   SNR_{coadd} = \sqrt{\sum_i SNR_i^2}
+
+.. math::
+   SNR_{coadd} = \sqrt{\sum_i N^2 10^{-0.8(m-m_{N,i})}}
+
+
+from above we know:
+
+.. math::
+   m-m_{N,coadd} = -2.5\log_{10} \frac{SNR_{coadd}}{N}
+
+
+subsitute in :math:`SNR_{coadd}` from above:
+
+.. math::
+   -m_{N,coadd} = -2.5\log_{10} \frac{\sqrt{\sum_i N^2 10^{-0.8(m-m_{N,i})}}}{N} - m
+
+
+.. math::
+   m_{N,coadd} = 2.5\log_{10} \sqrt{\sum_i 10^{-0.8(m-m_{N,i})}} + m
+
+
+We've just been carrying :math:`m` around as an arbitray magnitude, so I think we can set :math:`m=0` and simplify to
+
+.. math::
+   m_{N,coadd} = 1.25\log_{10} \sum_i 10^{0.8m_{N,i}}
+
+So there we go, if we have lots of images with unique N-sigma depth values, we can compute what the N-sigma depth would be if they were coadded.
+
 
 .. .. rubric:: References
 
