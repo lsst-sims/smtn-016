@@ -1,0 +1,9 @@
+% bibentry template for lsst.bib in https://github.com/lsst/lsst-texmf/blob/main/texmf/bibtex/bib/lsst.bib
+
+@DocuShare{SMTN-016,
+   author = { Peter Yoachim },
+    title = {Surface Brightness Limit Derivations},
+     year = 2022,
+    month = Jan,
+   handle = {SMTN-016},
+      url = {https://smtn-016.lsst.io } }
