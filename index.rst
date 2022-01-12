@@ -217,6 +217,47 @@ We've just been carrying :math:`m` around as an arbitray magnitude, so I think w
 
 So there we go, if we have lots of images with unique N-sigma depth values, we can compute what the N-sigma depth would be if they were coadded.
 
+Results
+=======
+
+These equations are have been put in `MAF <https://github.com/lsst/rubin_sim/blob/main/rubin_sim/maf/metrics/surfbMetric.py>`, and the results for a recent baseline are computed in this `notebook <>`.
+
+By default, we compute the 3-sigma limiting depth over a 100 square arcsecond patch of sky.
+
+.. list-table:: Median surface brightness limits
+   :widths: 25 25 
+   :header-rows: 1
+
+   * - filter
+     - surface brightness limit (mag/sq arcsec)
+   * - u
+     - 28.5
+   * - g
+     - 29.4
+   * - r
+     - 29.4
+   * - i
+     - 28.8
+   * - z
+     - 28.0
+   * - y
+     - 27.2
+
+
+.. image:: notebook/temp/thumb.baseline_v2_1_10yrs_sb_limit_u_u_HEAL_SkyMap.png
+   :width: 30%
+.. image:: notebook/temp/thumb.baseline_v2_1_10yrs_sb_limit_g_g_HEAL_SkyMap.png
+   :width: 30%
+.. image:: notebook/temp/thumb.baseline_v2_1_10yrs_sb_limit_r_r_HEAL_SkyMap.png
+   :width: 30%
+
+
+.. image:: notebook/temp/thumb.baseline_v2_1_10yrs_sb_limit_i_i_HEAL_SkyMap.png
+   :width: 30%
+.. image:: notebook/temp/thumb.baseline_v2_1_10yrs_sb_limit_z_z_HEAL_SkyMap.png
+   :width: 30%
+.. image:: notebook/temp/thumb.baseline_v2_1_10yrs_sb_limit_y_y_HEAL_SkyMap.png
+   :width: 30%
 
 .. .. rubric:: References
 
