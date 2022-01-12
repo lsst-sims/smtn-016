@@ -54,7 +54,7 @@
 Limiting Surface Brightness
 ---------------------------
 
-Throughout we are assuming Guassian propigation of error. The number of photons detected in a single pixel from an object of constant surface brightness :math:`\mu`:
+Throughout we are assuming Guassian propagation of error. The number of photons detected in a single pixel from an object of constant surface brightness :math:`\mu`:
 
 .. math::
    N_{photons, source} = 10^{\frac{\mu_{source} - Z_p + kX}{-2.5}} * A_{pix} * t_{exp}
