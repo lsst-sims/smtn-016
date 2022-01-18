@@ -231,17 +231,17 @@ By default, we compute the 3-sigma limiting depth over a 100 square arcsecond pa
    * - filter
      - surface brightness limit (mag/sq arcsec)
    * - u
-     - 28.5
+     - 29.4
    * - g
-     - 29.4
+     - 30.3
    * - r
-     - 29.4
+     - 30.3
    * - i
-     - 28.8
+     - 29.7
    * - z
-     - 28.0
+     - 28.9
    * - y
-     - 27.2
+     - 28.1
 
 
 .. image:: notebook/temp/thumb.baseline_v2_1_10yrs_sb_limit_u_u_HEAL_SkyMap.png
