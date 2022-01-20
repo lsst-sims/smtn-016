@@ -91,7 +91,7 @@ and then the final total SNR after combining independent pixels will be
 If I work this out on paper I end up with
 
 .. math::
-   \mu_{source} = -1.25\log_{10}{SNR} + \frac{1.25}{2}\log_{10}{N_{pix}A_{pix}t_{exp}} + Z_p - kX
+   \mu_{source} = -5\log_{10}{SNR} + 2.5\log_{10}{N_{pix}A_{pix}t_{exp}} + Z_p - kX
 
 
 
