@@ -155,7 +155,7 @@ If one is dealing with multiple snaps in an exposure, the RN should be the effec
 Combining limiting magnitudes
 =============================
 
-A quick justification for how to combine limiting magnitudes, which is relatively straight forward but can be helpful to see written out.
+A quick justification for how to combine limiting magnitudes from multiple visits, which is relatively straight forward but can be helpful to see written out.
 
 We define :math:`m_N` as the magnitude where the SNR = N (N=5 for a the commonly quoted 5-sigma point source limiting magnitude, N=3 is often used for surface brightness measurements, as some examples)
 
@@ -229,7 +229,7 @@ So there we go, if we have lots of images with unique N-sigma depth values, we c
 Estimated limits for the baseline strategy
 ------------------------------------------
 
-These equations are have been made available as a Metric within `MAF <https://github.com/lsst/rubin_sim/blob/main/rubin_sim/maf/metrics/surfbMetric.py>`__, and the results for a recent baseline are computed in this `notebook <https://github.com/lsst-sims/smtn-016/blob/main/notebook/Surface_brightness_example.ipynb>`__ as a helpful guide.
+These equations have been made available as a Metric within `MAF <https://github.com/lsst/rubin_sim/blob/main/rubin_sim/maf/metrics/surfbMetric.py>`__. The 'SurfaceBrightnessMetric' calculates the surface brightness limiting magnitude for each of the read noise, background, and source dominated cases above and reports the minimum (note that many bands will be background limited, but u band is potentially read noise limited). The results for a recent baseline are computed in this `notebook <https://github.com/lsst-sims/smtn-016/blob/main/notebook/Surface_brightness_example.ipynb>`__ as a helpful guide.
 
 By default, we compute the 3-sigma limiting depth over a 100 square arcsecond patch of sky.
 
