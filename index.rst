@@ -226,8 +226,8 @@ We've just been carrying :math:`m` around as an arbitray magnitude, so I think w
 
 So there we go, if we have lots of images with unique N-sigma depth values, we can compute what the N-sigma depth would be if they were coadded.
 
-Results
-=======
+Estimated limits for the baseline strategy
+------------------------------------------
 
 These equations are have been made available as a Metric within `MAF <https://github.com/lsst/rubin_sim/blob/main/rubin_sim/maf/metrics/surfbMetric.py>`__, and the results for a recent baseline are computed in this `notebook <https://github.com/lsst-sims/smtn-016/blob/main/notebook/Surface_brightness_example.ipynb>`__ as a helpful guide.
 
