@@ -157,7 +157,7 @@ Combining limiting magnitudes
 
 A quick justification for how to combine limiting magnitudes, which is relatively straight forward but can be helpful to see written out.
 
-We define :math:`m_N` as the magnitude where the SNR = N (N=5 for a the commonly quoted 5-sigma point source limiting magnitude, for example)
+We define :math:`m_N` as the magnitude where the SNR = N (N=5 for a the commonly quoted 5-sigma point source limiting magnitude, N=3 is often used for surface brightness measurements, as some examples)
 
 so:
 
