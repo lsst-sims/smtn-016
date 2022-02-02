@@ -235,7 +235,7 @@ These equations have been made available as a Metric within `MAF <https://github
 
 By default, we compute the 3-sigma limiting depth over a 100 square arcsecond patch of sky.
 
-.. list-table:: Median surface brightness limits assuming background-dominated Gaussian noise
+.. list-table:: Median surface brightness limits assuming background-dominated Gaussian noise, year 10
    :widths: 25 25 
    :header-rows: 1
 
@@ -254,6 +254,25 @@ By default, we compute the 3-sigma limiting depth over a 100 square arcsecond pa
    * - y
      - 28.1
 
+
+.. list-table:: Median surface brightness limits assuming background-dominated Gaussian noise, year 1
+   :widths: 25 25 
+   :header-rows: 1
+
+   * - filter
+     - surface brightness limit (mag/sq arcsec) (3-sigma 10x10 arcsec)
+   * - u
+     - 28.0
+   * - g
+     - 29.0
+   * - r
+     - 29.0
+   * - i
+     - 28.5
+   * - z
+     - 27.6
+   * - y
+     - 26.9
 
 .. image:: notebook/temp/thumb.baseline_v2_1_10yrs_sb_limit_u_u_HEAL_SkyMap.png
    :width: 30%
