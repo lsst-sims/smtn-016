@@ -247,15 +247,15 @@ By default, we compute the 3-sigma limiting depth over a 100 square arcsecond pa
    * - filter
      - surface brightness limit (mag/sq arcsec) (3-sigma 10x10 arcsec)
    * - u
-     - 29.4
+     - 29.1
    * - g
-     - 30.3
+     - 30.4
    * - r
      - 30.3
    * - i
-     - 29.7
+     - 29.8
    * - z
-     - 28.9
+     - 29.1
    * - y
      - 28.1
 
@@ -267,31 +267,31 @@ By default, we compute the 3-sigma limiting depth over a 100 square arcsecond pa
    * - filter
      - surface brightness limit (mag/sq arcsec) (3-sigma 10x10 arcsec)
    * - u
-     - 28.0
+     - 28.1
    * - g
-     - 29.0
+     - 29.2
    * - r
-     - 29.0
+     - 28.8
    * - i
-     - 28.5
+     - 28.3
    * - z
-     - 27.6
+     - 27.7
    * - y
-     - 26.9
+     - 26.7
 
-.. image:: notebook/temp/thumb.baseline_v2_1_10yrs_sb_limit_u_u_HEAL_SkyMap.png
+.. image:: notebook/temp/thumb.baseline_v5_3_5_10yrs_sb_limit_u_u_HEAL_SkyMap.png
    :width: 30%
-.. image:: notebook/temp/thumb.baseline_v2_1_10yrs_sb_limit_g_g_HEAL_SkyMap.png
+.. image:: notebook/temp/thumb.baseline_v5_3_5_10yrs_sb_limit_g_g_HEAL_SkyMap.png
    :width: 30%
-.. image:: notebook/temp/thumb.baseline_v2_1_10yrs_sb_limit_r_r_HEAL_SkyMap.png
+.. image:: notebook/temp/thumb.baseline_v5_3_5_10yrs_sb_limit_r_r_HEAL_SkyMap.png
    :width: 30%
 
 
-.. image:: notebook/temp/thumb.baseline_v2_1_10yrs_sb_limit_i_i_HEAL_SkyMap.png
+.. image:: notebook/temp/thumb.baseline_v5_3_5_10yrs_sb_limit_i_i_HEAL_SkyMap.png
    :width: 30%
-.. image:: notebook/temp/thumb.baseline_v2_1_10yrs_sb_limit_z_z_HEAL_SkyMap.png
+.. image:: notebook/temp/thumb.baseline_v5_3_5_10yrs_sb_limit_z_z_HEAL_SkyMap.png
    :width: 30%
-.. image:: notebook/temp/thumb.baseline_v2_1_10yrs_sb_limit_y_y_HEAL_SkyMap.png
+.. image:: notebook/temp/thumb.baseline_v5_3_5_10yrs_sb_limit_y_y_HEAL_SkyMap.png
    :width: 30%
 
 .. .. rubric:: References
