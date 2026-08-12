@@ -45,14 +45,6 @@ Surface Brightness Limit Derivations
    Feel free to delete this instructional comment.
 
 
-
-
-.. TODO: Delete the note below before merging new content to the main branch.
-
-.. note::
-
-   Creating a metric to estimate coadded limiting surface brightness magnitudes.
-
 .. Add content here.
 .. Do not include the document title (it's automatically added from metadata.yaml).
 

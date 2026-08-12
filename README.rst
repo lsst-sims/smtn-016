@@ -10,7 +10,7 @@ Surface Brightness Limit Derivations
 SMTN-016
 ========
 
-A quick derivation of expected limiting surface brightness magnitudes in different limiting situations. The technote derives the limiting surface magnitude SNR equation, links to the MAF metric to calculate the value, and reports the calculated surface brightness limits for each filter for the current baseline simulation.
+This technote derives the limiting surface magnitude SNR equation, links to the MAF metric to calculate the value, and reports the calculated surface brightness limits for each filter for the current baseline simulation.
 
 **Links:**
 
