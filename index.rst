@@ -57,7 +57,7 @@ Surface Brightness Limit Derivations
 .. Do not include the document title (it's automatically added from metadata.yaml).
 
 Survey Strategy and Surface Brightness Limits
----------------------------------------------
+=============================================
 The Vera C. Rubin Observatory's Legacy Survey of Space and Time (LSST) has a wide variety of science goals, beyond the primary core science drivers. As part of the definition of the details of the survey strategy, the LSST and the community are working together to maximize science return across a wide cross-section of these goals, with the guidance of the LSST Survey Cadence Optimization Committee (the `SCOC <https://www.lsst.org/content/charge-survey-cadence-optimization-committee-scoc>`__). 
 
 Questions that arise in defining the survey strategy, when considering observations in multiple bandpasses over large areas of sky, is how the observations should be distributed between filters and if there should be different balances in different parts of the sky. There are many science interests that must be considered in this choice, including photometric redshift determination and galaxy detection. One aspect that is relevant for this tech note, and was discussed in detail in the 2018 Cadence White Paper 'LSST Cadence Optimization White Paper in Support of Observations of Unresolved Tidal Stellar Streams in Galaxies beyond the Local Group' (https://arxiv.org/abs/1812.04897) is the possibility of detecting low surface brightness features in coadded images from the survey. This cadence note made some estimates of the LSST coadded surface brightness limits based on the total number of visits available, but with simulations of the pointing history of the survey available as well as multiple simulations investigating the effects of varying the filter balance, it makes sense to create an estimate of the potential surface brightness limits coming from those pointing histories. 
@@ -68,7 +68,7 @@ While the actual surface brightness limits achieved by the survey will depend on
 Limiting Surface Brightness
 ---------------------------
 
-Throughout we are assuming Guassian propagation of error. The number of photons detected in a single pixel from an object of constant surface brightness :math:`\mu`:
+Throughout we are assuming Gaussian propagation of error. The number of photons detected in a single pixel from an object of constant surface brightness :math:`\mu`:
 
 .. math::
    N_{photons, source} = 10^{\frac{\mu_{source} - Z_p + kX}{-2.5}} * A_{pix} * t_{exp}
@@ -90,7 +90,7 @@ where RN is the readnoise in electrons.
 
 
 Source limited
-===============
+--------------
 
 In the source-limit, for a single pixel
 
@@ -110,7 +110,7 @@ If I work this out on paper I end up with
 
 
 Background Limited
-==================
+------------------
 
 .. math::
    SNR/pix = \frac{N_{photons,source}}{\sqrt{N_{photons, sky}}}
@@ -142,7 +142,7 @@ then the total SNR:
 
 
 Readnoise Limited
-==================
+-----------------
 
 .. math::
    SNR/pix = \frac{N_{photons,source}}{RN}
@@ -158,7 +158,7 @@ Readnoise Limited
 If one is dealing with multiple snaps in an exposure, the RN should be the effective readnoise, i.e., the single frame readnoise multiplied by the square root of the number of snaps.
 
 Combining limiting magnitudes
-=============================
+-----------------------------
 
 A quick justification for how to combine limiting magnitudes from multiple visits, which is relatively straight forward but can be helpful to see written out.
 
@@ -232,15 +232,15 @@ We've just been carrying :math:`m` around as an arbitray magnitude, so I think w
 So there we go, if we have lots of images with unique N-sigma depth values, we can compute what the N-sigma depth would be if they were coadded.
 
 Estimated limits for the baseline strategy
-------------------------------------------
+==========================================
 
 These equations have been made available as a Metric within `MAF <https://github.com/lsst/rubin_sim/blob/main/rubin_sim/maf/metrics/surfbMetric.py>`__. The 'SurfaceBrightnessLimitMetric' calculates the surface brightness limiting magnitude for each of the read noise, background, and source dominated cases above and reports the minimum (note that many bands will be background limited, but u band is potentially read noise limited). The results for a recent baseline are computed in this `notebook <https://github.com/lsst-sims/smtn-016/blob/main/notebook/Surface_brightness_example.ipynb>`__ as a helpful guide.
 
 **These are Gaussian-limit computations, and thus represent the theoretically best-possible surface brightness limits. Scattered light, flat-fielding errors, and other sources of noise could prevent Rubin from reaching the depths listed below.**
 
-By default, we compute the 3-sigma limiting depth over a 100 square arcsecond patch of sky.
+By default, we compute the 3-sigma limiting depth over a 100 square arcsecond patch of sky. We use the  baseline_v5.3.5_10yrs simulation for the pointing history.
 
-.. list-table:: Median surface brightness limits assuming background-dominated Gaussian noise, year 10
+.. list-table:: Median surface brightness limits assuming background-dominated Gaussian noise, year 10,  baseline_v5.3.5_10yrs
    :widths: 25 25 
    :header-rows: 1
 
@@ -260,7 +260,7 @@ By default, we compute the 3-sigma limiting depth over a 100 square arcsecond pa
      - 28.1
 
 
-.. list-table:: Median surface brightness limits assuming background-dominated Gaussian noise, year 1
+.. list-table:: Median surface brightness limits assuming background-dominated Gaussian noise, year 1,  baseline_v5.3.5_10yrs
    :widths: 25 25 
    :header-rows: 1
 
