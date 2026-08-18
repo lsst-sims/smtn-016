@@ -291,4 +291,5 @@ By default, we compute the 3-sigma limiting depth over a 100 square arcsecond pa
 .. Make in-text citations with: :cite:`bibkey`.
 
 .. .. bibliography:: local.bib lsstbib/books.bib lsstbib/lsst.bib lsstbib/lsst-dm.bib lsstbib/refs.bib lsstbib/refs_ads.bib
-..  :style: lsst_aa
+
+.. bibliography::
