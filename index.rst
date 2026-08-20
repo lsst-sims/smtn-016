@@ -1,10 +1,12 @@
-####################################
+###################################################################
 Surface Brightness Limit Derivations Relevant For Rubin Observatory
-####################################
+###################################################################
+
+DOI: `10.71929/rubin/3428336 <https://doi.org/10.71929/rubin/3428336>`_
 
 .. abstract::
 
-   This technote derives the limiting surface magnitude SNR equation, links to the MAF metric to calculate the value, and reports the calculated surface brightness limits for each filter for the current baseline simulation for the LSST performed by Rubin Observatory.
+   This technote derives the limiting surface magnitude SNR equation, links to the MAF metric to calculate the value, and reports the calculated surface brightness limits for each filter for the current baseline simulation for the LSST performed by the NSF-DOE Vera C. Rubin Observatory.
 
 ..
   Technote content.
@@ -50,9 +52,9 @@ Surface Brightness Limit Derivations Relevant For Rubin Observatory
 
 Survey Strategy and Surface Brightness Limits
 =============================================
-The Vera C. Rubin Observatory's Legacy Survey of Space and Time (LSST) has a wide variety of science goals, beyond the primary core science drivers. As part of the definition of the details of the survey strategy, the LSST and the community are working together to maximize science return across a wide cross-section of these goals, with the guidance of the LSST Survey Cadence Optimization Committee (the `SCOC <https://www.lsst.org/content/charge-survey-cadence-optimization-committee-scoc>`__) :cite:p:`PSTN-055`. 
+The NSF-DOE Vera C. Rubin Observatory's Legacy Survey of Space and Time (LSST) :cite:p:`2019ApJ...873..111I` has a wide variety of science goals, beyond the primary core science drivers. As part of the definition of the details of the survey strategy, the LSST and the community are working together to maximize science return across a wide cross-section of these goals, with the guidance of the LSST Survey Cadence Optimization Committee (the `SCOC <https://www.lsst.org/content/charge-survey-cadence-optimization-committee-scoc>`__) :cite:p:`PSTN-055`.
 
-Questions that arise in defining the survey strategy, when considering observations in multiple bandpasses over large areas of sky, is how the observations should be distributed between filters and if there should be different balances in different parts of the sky. There are many science interests that must be considered in this choice, including photometric redshift determination and galaxy detection. One aspect that is relevant for this tech note, and was discussed in detail in the 2018 Cadence White Paper 'LSST Cadence Optimization White Paper in Support of Observations of Unresolved Tidal Stellar Streams in Galaxies beyond the Local Group' :cite:p:`2018arXiv181204897L` is the possibility of detecting low surface brightness features in coadded images from the survey. This cadence note made some estimates of the LSST coadded surface brightness limits based on the total number of visits available, but with simulations of the pointing history of the survey available as well as multiple simulations investigating the effects of varying the filter balance, it makes sense to create an estimate of the potential surface brightness limits coming from those pointing histories. 
+Questions that arise in defining the survey strategy, when considering observations in multiple bandpasses over large areas of sky, is how the observations should be distributed between filters and if there should be different balances in different parts of the sky. There are many science interests that must be considered in this choice, including photometric redshift determination and galaxy detection. One aspect that is relevant for this tech note, and was discussed in detail in the 2018 Cadence White Paper 'LSST Cadence Optimization White Paper in Support of Observations of Unresolved Tidal Stellar Streams in Galaxies beyond the Local Group' :cite:p:`2018arXiv181204897L` is the possibility of detecting low surface brightness features in coadded images from the survey. This cadence note made some estimates of the LSST coadded surface brightness limits based on the total number of visits available, but with simulations of the pointing history of the survey available as well as multiple simulations investigating the effects of varying the filter balance, it makes sense to create an estimate of the potential surface brightness limits coming from those pointing histories.
 
 While the actual surface brightness limits achieved by the survey will depend on details of the data processing, especially flat fielding and sky subtraction, a basic estimate based on Gaussian errors and the simulated properties (sky brightness, seeing, read noise, etc) of each image is useful. This has now been coded into a metric within the LSST Metric Analysis Framework (`MAF <https://rubin-sim.lsst.io/rs_maf/index.html>`__) :cite:p:`2014SPIE.9149E..0BJ` which is part of the Rubin simulation package `'rubin_sim' <https://github.com/lsst/rubin_sim>`__, so we can compare the effect of varying survey strategies and filter balances. This work was done in coordination with the LSST Galaxies Science Collaboration Low Surface Brightness group, and the estimates generated by the metric generally agree with estimates from scaling limits from existing surface brightness limits from extant surveys such as Stripe 82.
 
@@ -164,7 +166,7 @@ so:
 Let's look at a flux ratio with some arbitrary mag :math:`m`
 
 .. math::
-   m-m_N = -2.5 \log_{10}{\frac{flux}{flux_N}} 
+   m-m_N = -2.5 \log_{10}{\frac{flux}{flux_N}}
 
 
 SNR at that new magnitude is
@@ -176,7 +178,7 @@ SNR at that new magnitude is
 substitute in
 
 .. math::
-   m-m_N = -2.5 \log_{10}{\frac{SNR * Noise}{N*Noise}} 
+   m-m_N = -2.5 \log_{10}{\frac{SNR * Noise}{N*Noise}}
 
 
 Solve for the SNR of an arbitrary mag :math:`m` given :math:`m_N`:
@@ -233,7 +235,7 @@ These equations have been made available as a Metric within `MAF <https://github
 By default, we compute the 3-sigma limiting depth over a 100 square arcsecond patch of sky. We use the  baseline_v5.3.5_10yrs simulation for the pointing history.
 
 .. list-table:: Median surface brightness limits assuming background-dominated Gaussian noise, year 10,  baseline_v5.3.5_10yrs
-   :widths: 25 25 
+   :widths: 25 25
    :header-rows: 1
 
    * - filter
@@ -253,7 +255,7 @@ By default, we compute the 3-sigma limiting depth over a 100 square arcsecond pa
 
 
 .. list-table:: Median surface brightness limits assuming background-dominated Gaussian noise, year 1,  baseline_v5.3.5_10yrs
-   :widths: 25 25 
+   :widths: 25 25
    :header-rows: 1
 
    * - filter
@@ -292,4 +294,6 @@ By default, we compute the 3-sigma limiting depth over a 100 square arcsecond pa
 
 .. .. bibliography:: local.bib lsstbib/books.bib lsstbib/lsst.bib lsstbib/lsst-dm.bib lsstbib/refs.bib lsstbib/refs_ads.bib
 
+References
+==========
 .. bibliography::
