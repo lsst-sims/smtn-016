@@ -1,10 +1,10 @@
 ####################################
-Surface Brightness Limit Derivations
+Surface Brightness Limit Derivations Relevant For Rubin Observatory
 ####################################
 
 .. abstract::
 
-   This technote derives the limiting surface magnitude SNR equation, links to the MAF metric to calculate the value, and reports the calculated surface brightness limits for each filter for the current baseline simulation.
+   This technote derives the limiting surface magnitude SNR equation, links to the MAF metric to calculate the value, and reports the calculated surface brightness limits for each filter for the current baseline simulation for the LSST performed by Rubin Observatory.
 
 ..
   Technote content.
