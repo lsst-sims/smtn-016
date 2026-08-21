@@ -2,6 +2,7 @@
    :target: https://smtn-016.lsst.io/
 .. image:: https://github.com/lsst-sims/smtn-016/workflows/CI/badge.svg
    :target: https://github.com/lsst-sims/smtn-016/actions/
+
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.51968.svg
    :target: https://doi.org/10.5281/zenodo.51968
 
